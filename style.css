@@ -64,15 +64,15 @@ body{
 }
 
 .figures>*>img{
-height: 400px;
-width: 400px;
+height: 380px;
+width: 380px;
 padding: 20px;
 
 }
 
 .figures>*>img:hover{
-    height: 420px;
-    width: 420px;
+    height: 400px;
+    width: 400px;
     padding: 0 10px;
     
 }
