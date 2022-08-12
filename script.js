@@ -19,3 +19,19 @@ exitBtn.addEventListener('click',function start(){
 
 
 })
+
+
+
+/* GAME */
+/* 1-ROCK  2-PAPER  3-SCISSORS */
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+function getPcChoice(){
+    let choice=getRandomIntInclusive(1,3)
+    return choice
+}
