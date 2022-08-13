@@ -11,6 +11,9 @@ figures.style.display = 'none'
 
 
 startBtn.addEventListener('click',function start(){
+    pointsPc=0
+    pointsPlayer=0
+    displayPoints()
     console.log("x")
     menu.style.display = 'none'
     exitBtn.style.display = 'block'
