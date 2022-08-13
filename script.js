@@ -50,20 +50,21 @@ const paperBtn=document.getElementById("paperBtn")
 const scissBtn=document.getElementById("scissBtn")
 
 
-rockBtn.addEventListener(click, function(){
-    getPlayerChoice(1)
+rockBtn.addEventListener("click", function(){
+    round(1)
+    
 
 
 })
 
-paperBtn.addEventListener(click, function(){
-    getPlayerChoice(2)
+paperBtn.addEventListener("click", function(){
+    round(2)
 
     
 })
 
-scissBtn.addEventListener(click, function(){
-    getPlayerChoice(3)
+scissBtn.addEventListener("click", function(){
+    round(3)
 
     
 })
@@ -115,15 +116,17 @@ function displayPcFigure(fig){
 /* MAIN GAME FUNCTIONS */
 
 
-function round(){
+function round(playerChoice){
+    console.log("round()")
     displayPcPoints()
     displayPlayerPoints()
     
 
 
 
-    let playchoice=getPlayerChoice()
-    let pcchoice=getPcChoice()
+    displayPlayerFigure(playerChoice)
+    displayPcFigure(getPcChoice())
+
     if(playchoice==1 && pcchoice==1) return 2
     if(playchoice==1 && pcchoice==2) return 0
     if(playchoice==1 && pcchoice==3) return 1
