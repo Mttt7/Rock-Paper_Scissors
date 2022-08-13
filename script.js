@@ -71,6 +71,10 @@ scissBtn.addEventListener("click", function(){
 
 /* DISPLAYING EVERYTHING */
 
+function displayPoints(){
+    displayPcPoints()
+    displayPlayerPoints()
+}
 
 function displayPlayerPoints(){
     document.getElementById("player-points").innerHTML=pointsPlayer
@@ -110,24 +114,9 @@ function displayPcFigure(fig){
     }
 }
 
-
-
-
-/* MAIN GAME FUNCTIONS */
-
-
-function round(playerChoice){
-    console.log("round()")
-    displayPcPoints()
-    displayPlayerPoints()
-    
-
-
-
-    displayPlayerFigure(playerChoice)
-    displayPcFigure(getPcChoice())
-
-    if(playchoice==1 && pcchoice==1) return 2
+/* CHECKING */
+function checkWinner(playchoice,pcchoice){
+if(playchoice==1 && pcchoice==1) return 2
     if(playchoice==1 && pcchoice==2) return 0
     if(playchoice==1 && pcchoice==3) return 1
 
@@ -138,8 +127,38 @@ function round(playerChoice){
     if(playchoice==3 && pcchoice==3) return 2
     if(playchoice==3 && pcchoice==1) return 0
     if(playchoice==3 && pcchoice==2) return 1
+}
 
+/* MAIN GAME FUNCTIONS */
+
+
+function round(playerChoice){
     
+   
+    
+
+
+
+    displayPlayerFigure(playerChoice)
+    pc_choice=getPcChoice()
+    displayPcFigure(pc_choice)
+
+    let winner = checkWinner(playerChoice,pc_choice)
+    if(winner==2){
+        console.log("DRAW")
+        displayPoints()
+    }
+    if(winner==0){
+        pointsPc++
+        console.log("PC WON")
+        displayPoints()
+
+    }
+    if(winner==1){
+        pointsPlayer++
+        console.log("PLAYER WON")
+        displayPoints()
+    }
 }
 
 
