@@ -8,7 +8,7 @@ startBtn.addEventListener('click',function start(){
     console.log("x")
     menu.style.display = 'none'
     exitBtn.style.display = 'block'
-
+    
 
 })
 
@@ -25,6 +25,10 @@ exitBtn.addEventListener('click',function start(){
 /* GAME */
 /* 1-ROCK  2-PAPER  3-SCISSORS */
 
+
+let pointsPc=0
+let pointsPlayer=0
+
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -36,9 +40,6 @@ function getPcChoice(){
     return choice
 }
 
-function getPlayerChoice(choice){
-    return choice
-}
 
 
 
@@ -68,14 +69,45 @@ scissBtn.addEventListener(click, function(){
 })
 
 /* DISPLAYING EVERYTHING */
-function displayPlayerPoints(points){
 
+
+function displayPlayerPoints(){
+    document.getElementById("player-points").innerHTML=pointsPlayer
 }
 
-function displayPcPoints(points){
-
+function displayPcPoints(){
+    document.getElementById("pc-points").innerHTML=pointsPc
 }
 
+
+
+function displayPlayerFigure(fig){
+    if(fig==1){
+        document.getElementById("img-player-choice").src="images/rock.png"
+    }
+
+    if(fig==2){
+        document.getElementById("img-player-choice").src="images/paper.png"
+    }
+
+    if(fig==3){
+        document.getElementById("img-player-choice").src="images/scissors.png"
+    }
+}
+
+function displayPcFigure(fig){
+    if(fig==1){
+        document.getElementById("img-pc-choice").src="images/rock.png"
+    }
+
+    if(fig==2){
+        document.getElementById("img-pc-choice").src="images/paper.png"
+    }
+
+    if(fig==3){
+        document.getElementById("img-pc-choice").src="images/scissors.png"
+    }
+}
 
 
 
@@ -84,13 +116,32 @@ function displayPcPoints(points){
 
 
 function round(){
+    displayPcPoints()
+    displayPlayerPoints()
+    
 
+
+
+    let playchoice=getPlayerChoice()
+    let pcchoice=getPcChoice()
+    if(playchoice==1 && pcchoice==1) return 2
+    if(playchoice==1 && pcchoice==2) return 0
+    if(playchoice==1 && pcchoice==3) return 1
+
+    if(playchoice==2 && pcchoice==2) return 2
+    if(playchoice==2 && pcchoice==3) return 0
+    if(playchoice==2 && pcchoice==1) return 1
+
+    if(playchoice==3 && pcchoice==3) return 2
+    if(playchoice==3 && pcchoice==1) return 0
+    if(playchoice==3 && pcchoice==2) return 1
+
+    
 }
 
+
 function game(){
-    let pointsPc=0
-    let pointsPlayer=0
-    displayPcPoints(pointsPc)
-    displayPlayerPoints(pointsPlayer)
+    
+   
 
 }

@@ -50,6 +50,7 @@ body{
  .buttons>*:hover{
     background-color:#F92C85;
     border:solid 3px #F92C85;
+    
 }
 
 
@@ -76,7 +77,43 @@ padding: 20px;
     padding: 0 10px;
     
 }
-       
+
+#pc-choice .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#img-pc-choice{
+    height: 380px;
+    width: 380px;
+
+}
+
+#pc-choice .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#img-pc-choice{
+    height: 380px;
+    width: 380px;
+
+}
+
+#player-choice .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+      
+#img-player-choice{
+    height: 380px;
+    width: 380px;
+
+}
+
     
 /* GAME */
 
@@ -97,6 +134,7 @@ padding: 20px;
     width: 420px;
     height: 420px;
     border: solid 10px #F92C85;
+    border-radius: 40px;
 }
 
 
