@@ -1,13 +1,22 @@
 /* HIDING  AND SHOWING MENU*/
 const menu = document.getElementById("menu")
+const fugures = document.getElementById("figures")
+const gameSection = document.getElementById("game")
 const startBtn = document.getElementById("start-button")
 const exitBtn = document.getElementById("exit-button")
 exitBtn.style.display = 'none'
+gameSection.style.display = 'none'
+figures.style.display = 'none'
+
+
 
 startBtn.addEventListener('click',function start(){
     console.log("x")
     menu.style.display = 'none'
     exitBtn.style.display = 'block'
+    gameSection.style.display = 'flex'
+    figures.style.display = 'flex'
+
     
 
 })
@@ -16,6 +25,8 @@ exitBtn.addEventListener('click',function start(){
     console.log("x")
     menu.style.display = 'block'
     exitBtn.style.display = 'none'
+    gameSection.style.display = 'none'
+    figures.style.display = 'none'
 
 
 })
