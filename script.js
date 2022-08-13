@@ -35,3 +35,62 @@ function getPcChoice(){
     let choice=getRandomIntInclusive(1,3)
     return choice
 }
+
+function getPlayerChoice(choice){
+    return choice
+}
+
+
+
+
+
+const rockBtn=document.getElementById("rockBtn")
+const paperBtn=document.getElementById("paperBtn")
+const scissBtn=document.getElementById("scissBtn")
+
+
+rockBtn.addEventListener(click, function(){
+    getPlayerChoice(1)
+
+
+})
+
+paperBtn.addEventListener(click, function(){
+    getPlayerChoice(2)
+
+    
+})
+
+scissBtn.addEventListener(click, function(){
+    getPlayerChoice(3)
+
+    
+})
+
+/* DISPLAYING EVERYTHING */
+function displayPlayerPoints(points){
+
+}
+
+function displayPcPoints(points){
+
+}
+
+
+
+
+
+/* MAIN GAME FUNCTIONS */
+
+
+function round(){
+
+}
+
+function game(){
+    let pointsPc=0
+    let pointsPlayer=0
+    displayPcPoints(pointsPc)
+    displayPlayerPoints(pointsPlayer)
+
+}
