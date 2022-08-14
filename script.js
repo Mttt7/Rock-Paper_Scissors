@@ -9,6 +9,7 @@ exitBtn.style.display = 'none'
 gameSection.style.display = 'none'
 figures.style.display = 'none'
 exitBtn.style.display = 'none'
+resultBtn.style.display='none'
 
 
 
