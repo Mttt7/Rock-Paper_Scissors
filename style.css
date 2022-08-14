@@ -167,7 +167,7 @@ padding: 20px;
     align-items: center;
     justify-content: center;
     background-color: #5bccf6;
-    padding: 28px;
+    padding: 18px;
     
 }
 .footer .text{
@@ -191,4 +191,21 @@ padding: 20px;
     color: white;
 }
 
+.footer .image img{
+    width: 30px;
+    height: 30px;
+}
+
+.footer .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+}
+
+.footer .social-media-links{
+    display: flex;
+    gap:40px;
+    padding:15px;
+}
 
