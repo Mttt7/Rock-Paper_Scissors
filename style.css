@@ -7,6 +7,14 @@ body{
     min-height: 100vh;
 }
 
+.centered{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
 /*  HEADER */
 .header{
     display: flex;
@@ -121,10 +129,9 @@ padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex:1;
 }
-#game .choice{
 
-}
 
 #game #points {
     display: flex;
@@ -133,11 +140,20 @@ padding: 20px;
 #game>*>.image{
     width: 420px;
     height: 420px;
-    border: solid 10px #F92C85;
+    border: solid 10px black;
     border-radius: 40px;
 }
 
-
+#result{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 100px;
+    border: solid 8px black;
+    padding: 10px 60px;
+    margin: 15px;
+    color: aliceblue;
+    background-color: #FB8122;
+    border-radius: 50px;
+}
 
 
 

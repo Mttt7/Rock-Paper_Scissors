@@ -4,9 +4,11 @@ const fugures = document.getElementById("figures")
 const gameSection = document.getElementById("game")
 const startBtn = document.getElementById("start-button")
 const exitBtn = document.getElementById("exit-button")
+const resultBtn=document.getElementById("result")
 exitBtn.style.display = 'none'
 gameSection.style.display = 'none'
 figures.style.display = 'none'
+exitBtn.style.display = 'none'
 
 
 
@@ -19,6 +21,7 @@ startBtn.addEventListener('click',function start(){
     exitBtn.style.display = 'block'
     gameSection.style.display = 'flex'
     figures.style.display = 'flex'
+    resultBtn.style.display = 'flex'
 
     
 
@@ -85,9 +88,22 @@ scissBtn.addEventListener("click", function(){
 
 /* DISPLAYING EVERYTHING */
 
-function displayPoints(){
+function displayPoints(result){
     displayPcPoints()
     displayPlayerPoints()
+    
+    if(result==0){
+        if((pointsPc==0 && pointsPlayer==0))resultBtn.innerHTML="???"
+        else resultBtn.innerHTML="PC WON"
+    } 
+    if(result==1){
+        if((pointsPc==0 && pointsPlayer==0))resultBtn.innerHTML="???"
+        else resultBtn.innerHTML="PLAYER WON"
+    }
+    if(result==2){
+        if((pointsPc==0 && pointsPlayer==0))resultBtn.innerHTML="???"
+        else resultBtn.innerHTML="DRAW"
+    }
 }
 
 function displayPlayerPoints(){
@@ -163,20 +179,22 @@ function round(playerChoice){
     let winner = checkWinner(playerChoice,pc_choice)
     if(winner==2){
         console.log("DRAW")
-        const timeoutPoints=setTimeout(displayPoints,500)
+        const timeoutPoints=setTimeout(displayPoints,500,2)
+        
         
     }
     if(winner==0){
         pointsPc++
         console.log("PC WON")
-        const timeoutPoints=setTimeout(displayPoints,500)
+        const timeoutPoints=setTimeout(displayPoints,500,0)
         
 
     }
     if(winner==1){
         pointsPlayer++
         console.log("PLAYER WON")
-        const timeoutPoints=setTimeout(displayPoints,500)
+        
+        const timeoutPoints=setTimeout(displayPoints,500,1)
         
     }
 }
