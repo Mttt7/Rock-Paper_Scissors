@@ -16,7 +16,9 @@ resultBtn.style.display='none'
 startBtn.addEventListener('click',function start(){
     pointsPc=0
     pointsPlayer=0
-    displayPoints()
+    displayPoints(-1)
+    document.getElementById("img-pc-choice").src="images/PC.png"
+    document.getElementById("img-player-choice").src="images/YOU.png"
     console.log("x")
     menu.style.display = 'none'
     exitBtn.style.display = 'block'
@@ -34,7 +36,7 @@ exitBtn.addEventListener('click',function start(){
     exitBtn.style.display = 'none'
     gameSection.style.display = 'none'
     figures.style.display = 'none'
-
+    resultBtn.style.display='none'
 
 })
 
@@ -93,17 +95,19 @@ function displayPoints(result){
     displayPcPoints()
     displayPlayerPoints()
     
+    if(result==-1){
+        resultBtn.innerHTML="???"
+    }
     if(result==0){
-        if((pointsPc==0 && pointsPlayer==0))resultBtn.innerHTML="???"
-        else resultBtn.innerHTML="PC WON"
+        
+        resultBtn.innerHTML="PC WON"
     } 
     if(result==1){
-        if((pointsPc==0 && pointsPlayer==0))resultBtn.innerHTML="???"
-        else resultBtn.innerHTML="PLAYER WON"
+        
+         resultBtn.innerHTML="PLAYER WON"
     }
     if(result==2){
-        if((pointsPc==0 && pointsPlayer==0))resultBtn.innerHTML="???"
-        else resultBtn.innerHTML="DRAW"
+        resultBtn.innerHTML="DRAW"
     }
 }
 
