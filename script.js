@@ -155,23 +155,29 @@ function round(playerChoice){
 
     displayPlayerFigure(playerChoice)
     pc_choice=getPcChoice()
-    displayPcFigure(pc_choice)
 
+    console.log("X")
+    const timeoutFigure = setTimeout(displayPcFigure,500,pc_choice)
+    console.log("Y")
+    
     let winner = checkWinner(playerChoice,pc_choice)
     if(winner==2){
         console.log("DRAW")
-        displayPoints()
+        const timeoutPoints=setTimeout(displayPoints,500)
+        
     }
     if(winner==0){
         pointsPc++
         console.log("PC WON")
-        displayPoints()
+        const timeoutPoints=setTimeout(displayPoints,500)
+        
 
     }
     if(winner==1){
         pointsPlayer++
         console.log("PLAYER WON")
-        displayPoints()
+        const timeoutPoints=setTimeout(displayPoints,500)
+        
     }
 }
 
